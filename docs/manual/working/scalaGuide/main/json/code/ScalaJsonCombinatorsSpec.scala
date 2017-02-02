@@ -3,13 +3,8 @@
  */
 package scalaguide.json
 
-import play.api.data.validation.ValidationError
-
-import org.junit.runner.RunWith
 import org.specs2.mutable.Specification
-import org.specs2.runner.JUnitRunner
 
-@RunWith(classOf[JUnitRunner])
 class ScalaJsonCombinatorsSpec extends Specification {
 
   val sampleJson = {

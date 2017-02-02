@@ -97,7 +97,8 @@ val compatFilters = {
 
 lazy val `play-json` = crossProject.crossType(CrossType.Full)
   .in(file("play-json"))
-  .enablePlugins(PlayLibrary)
+<<<<<<< HEAD
+  .enablePlugins(PlayLibrary, Playdoc)
   .settings(commonSettings)
   .settings(
     mimaBinaryIssueFilters ++= {
@@ -110,7 +111,8 @@ lazy val `play-json` = crossProject.crossType(CrossType.Full)
       "org.typelevel" %% "macro-compat" % "1.1.1",
       "org.scala-lang" % "scala-compiler" % scalaVersion.value % "provided",
       compilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full)
-    )
+    ),
+    unmanagedSourceDirectories in Test ++= (baseDirectory.value / ".." / "docs" / "manual" / "working" / "scalaGuide" ** "code").get
   )
   .dependsOn(`play-functional`)
 

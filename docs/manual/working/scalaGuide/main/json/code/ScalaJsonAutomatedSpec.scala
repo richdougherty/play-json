@@ -3,14 +3,10 @@
  */
 package scalaguide.json
 
-import play.api.data.validation.ValidationError
 import play.api.libs.json.Json
-import org.junit.runner.RunWith
 import org.specs2.mutable.Specification
-import org.specs2.runner.JUnitRunner
 import play.api.libs.json.JsonNaming.SnakeCase
 
-@RunWith(classOf[JUnitRunner])
 class ScalaJsonAutomatedSpec extends Specification {
 
   //#model
