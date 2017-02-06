@@ -97,7 +97,6 @@ val compatFilters = {
 
 lazy val `play-json` = crossProject.crossType(CrossType.Full)
   .in(file("play-json"))
-<<<<<<< HEAD
   .enablePlugins(PlayLibrary, Playdoc)
   .settings(commonSettings)
   .settings(
@@ -132,6 +131,16 @@ lazy val `play-functional` = crossProject.crossType(CrossType.Pure)
 lazy val `play-functionalJVM` = `play-functional`.jvm
 lazy val `play-functionalJS` = `play-functional`.js
 
+lazy val docs = project
+  .in(file("docs"))
+  .enablePlugins(PlayDocsPlugin)
+  .settings(
+    PlayDocsKeys.docsVersion := "2.6.0-SNAPSHOT",
+    scalaVersion := ScalaVersions.scala212
+  )
+  .dependsOn(`play-json`)
+
+>>>>>>> WIP: Running Play SBT docs plugin with circular build process
 playBuildRepoName in ThisBuild := "play-json"
 
 releaseProcess := Seq[ReleaseStep](
