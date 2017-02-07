@@ -140,7 +140,6 @@ lazy val docs = project
   )
   .dependsOn(`play-json`)
 
->>>>>>> WIP: Running Play SBT docs plugin with circular build process
 playBuildRepoName in ThisBuild := "play-json"
 
 releaseProcess := Seq[ReleaseStep](
