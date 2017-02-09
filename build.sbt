@@ -110,8 +110,7 @@ lazy val `play-json` = crossProject.crossType(CrossType.Full)
       "org.typelevel" %% "macro-compat" % "1.1.1",
       "org.scala-lang" % "scala-compiler" % scalaVersion.value % "provided",
       compilerPlugin("org.scalamacros" % "paradise" % "2.1.0" cross CrossVersion.full)
-    ),
-    unmanagedSourceDirectories in Test ++= (baseDirectory.value / ".." / "docs" / "manual" / "working" / "scalaGuide" ** "code").get
+    )
   )
   .dependsOn(`play-functional`)
 
@@ -119,7 +118,9 @@ lazy val `play-jsonJVM` = `play-json`.jvm.
   settings(
     libraryDependencies ++= joda ++ jacksons ++ specsBuild.map(_ % Test) :+ (
       "ch.qos.logback" % "logback-classic" % "1.1.7" % Test
-    ))
+    ),
+    unmanagedSourceDirectories in Test ++= (baseDirectory.value / ".." / ".." / "docs" / "manual" / "working" / "scalaGuide" ** "code").get
+  )
 
 lazy val `play-jsonJS` = `play-json`.js
 
@@ -130,15 +131,6 @@ lazy val `play-functional` = crossProject.crossType(CrossType.Pure)
 
 lazy val `play-functionalJVM` = `play-functional`.jvm
 lazy val `play-functionalJS` = `play-functional`.js
-
-lazy val docs = project
-  .in(file("docs"))
-  .enablePlugins(PlayDocsPlugin)
-  .settings(
-    PlayDocsKeys.docsVersion := "2.6.0-SNAPSHOT",
-    scalaVersion := ScalaVersions.scala212
-  )
-  .dependsOn(`play-json`)
 
 playBuildRepoName in ThisBuild := "play-json"
 
