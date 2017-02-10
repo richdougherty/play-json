@@ -38,7 +38,7 @@ The [`play.api.libs.json`](https://oss.sonatype.org/service/local/repositories/p
 
 The package provides the following types:
 
-### [`JsValue`]https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play-json_2.12/2.6.0-M1/play-json_2.12-2.6.0-M1-javadoc.jar/!/play/api/libs/json/JsValue.html)
+### [`JsValue`](https://oss.sonatype.org/service/local/repositories/public/archive/com/typesafe/play/play-json_2.12/2.6.0-M1/play-json_2.12-2.6.0-M1-javadoc.jar/!/play/api/libs/json/JsValue.html)
 
 This is a trait representing any JSON value. The JSON library has a case class extending `JsValue` to represent each valid JSON type:
 
